@@ -5,7 +5,7 @@ javascript: (() => {
     );
     const domeElement = document.querySelector(componentSelector);
     const invalidTree = Object.entries(ng.getComponent(domeElement))
-      .filter((i) => !!i[1].controls)
+      .filter((i) => !!i[1]?.controls)
       .reduce((a, b) => ({ ...a, [b[0]]: findAllInvalidControls(b) }), {});
     console.log(invalidTree);
   } catch (e) {
